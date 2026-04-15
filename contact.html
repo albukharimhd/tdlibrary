@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Muhammad Al Bukhari</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <style>
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background-color: #f4f7f6; 
+        }
+        
+        /* Navbar Custom Oranye Dop Solid */
+        /* Ini kode pengunci ukuran navbar agar sama di semua halaman */
+      .navbar-custom { 
+        background-color: #d35400 !important; 
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        opacity: 1 !important; 
+        padding: 0 !important; /* Hapus padding bawaan */
+        height: 80px !important; /* Kunci tinggi navbar jadi 80 pixel di semua halaman */
+        display: flex;
+        align-items: center;
+      }
+      .navbar-custom .navbar-brand {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #ffffff !important;
+      }
+      .navbar-custom .nav-link { 
+        color: #ffffff !important; 
+        font-weight: 500;
+      }
+
+        /* Hero Section (Latar Belakang Gambar) */
+        .hero-contact {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('WhatsApp Image 2026-02-26 at 3.15.16 PM.jpeg') center/cover no-repeat;
+            padding: 120px 0; 
+            color: white; 
+            text-align: center;
+        }
+
+        /* Kotak Formulir Kontak */
+        .contact-card {
+            background-color: #ffffff; 
+            border: 2px solid #d35400; /* Garis oranye */
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05); 
+            padding: 40px; 
+            margin-top: -50px; /* Bikin kotak naik numpuk gambar */
+            position: relative; 
+            z-index: 10;
+        }
+
+        /* Teks dan Tombol Oranye */
+        .form-label { 
+            color: #d35400; 
+            font-weight: 600; 
+        }
+        .btn-oranye { 
+            background-color: #d35400; 
+            color: white; 
+            border: none; 
+        }
+        .btn-oranye:hover { 
+            background-color: #ba4a00; 
+            color: white; 
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="htt.html">
+          <i class="bi bi-book-half fs-3 me-2"></i> Tokyo Denki Library
+        </a>
+        <button class="navbar-toggler border-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="htt.html"><i class="bi bi-house-door me-1"></i> Homepage</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html"><i class="bi bi-info-circle me-1"></i> About Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html"><i class="bi bi-envelope me-1"></i> Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section class="hero-contact">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-3">Hubungi Kami</h1>
+            <p class="fs-5">Kami ingin mendengar dari Anda! Silakan isi formulir berikut.</p>
+        </div>
+    </section>
+
+    <section class="container mb-5 pb-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-10">
+                <div class="contact-card">
+                    <h2 class="fw-bold mb-3" style="color: #d35400;">Kontak</h2>
+                    <p class="text-muted mb-4">Ingin mengenal saya lebih jauh atau berdiskusi lebih lanjut? Silakan kirimkan pesan Anda melalui formulir di bawah ini.</p>
+
+                    <div class="alert alert-success alert-dismissible fade show d-none my-alert" role="alert">
+                        <strong>Terima kasih!</strong> Pesan Anda sudah kami terima.
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+
+                    <form name="albukhari69-contact-form">
+                        <div class="mb-4">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control form-control-lg" id="email" name="email" placeholder="nama@email.com" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="nohp" class="form-label">No. HP</label>
+                            <input type="tel" class="form-control form-control-lg" id="nohp" name="nohp" placeholder="08xxxxxxxxxx" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="pesan" class="form-label">Pesan</label>
+                            <textarea class="form-control form-control-lg" id="pesan" name="pesan" rows="5" placeholder="Tulis pesan Anda..." required></textarea>
+                        </div>
+                        <div class="d-flex justify-content-end mt-4">
+                            <button type="submit" class="btn btn-oranye btn-lg px-5 btn-kirim">Kirim Pesan</button>
+                            <button class="btn btn-oranye btn-lg px-5 btn-loading d-none" type="button" disabled>
+                                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Mengirim...
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-white text-center py-4" style="background-color: #d35400;">
+        <div class="container">
+            <p class="mb-1">&copy; 2026 Perpustakaan Tokyo Denki - Muhammad Al Bukhari</p>
+            <p class="mb-0 small">Terima kasih telah mengunjungi web perpustakaan kami.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycby8Ro2cmaWsbk7NIchU1Xo4HgjZiJVVkm-c4MHnzRNPbelo-thWM4uN-Sja0_cOW0CE/exec';
+        const form = document.forms['albukhari69-contact-form'];
+        const btnKirim = document.querySelector('.btn-kirim');
+        const btnLoading = document.querySelector('.btn-loading');
+        const myAlert = document.querySelector('.my-alert');
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            btnLoading.classList.remove('d-none');
+            btnKirim.classList.add('d-none');
+            
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                btnLoading.classList.add('d-none');
+                btnKirim.classList.remove('d-none');
+                myAlert.classList.remove('d-none');
+                form.reset();
+            })
+            .catch(error => {
+                btnLoading.classList.add('d-none');
+                btnKirim.classList.remove('d-none');
+                alert("Maaf, terjadi kesalahan saat mengirim pesan.");
+            });
+        });
+    </script>
+</body>
+</html>

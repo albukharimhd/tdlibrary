@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+
+    <title>Web Perpustakaan | Muhammad Al Bukhari</title>
+
+    <style>
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        padding-top: 80px; /* Jarak agar konten tidak tertutup navbar */
+      }
+
+      /* --- Warna Oranye Dop Custom --- */
+      .text-oranye { color: #d35400 !important; }
+      .bg-oranye { background-color: #d35400 !important; }
+      .btn-oranye { background-color: #d35400; color: white; border: none; }
+      .btn-oranye:hover { background-color: #ba4a00; color: white; }
+
+      /* Navbar Custom Oranye Dop - Ukuran Standar */
+      .navbar-custom {
+        background-color: #d35400 !important;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        opacity: 1 !important;
+        padding: 0 !important;
+        height: 80px !important;
+        display: flex;
+        align-items: center;
+      }
+      .navbar-custom .navbar-brand {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #ffffff !important;
+      }
+      .navbar-custom .nav-link {
+        color: #ffffff !important;
+        font-weight: 500;
+      }
+      .navbar-custom .nav-link:hover {
+        color: #fdf2e9 !important;
+        opacity: 0.8;
+      }
+
+      /* Hero Section Full Layar */
+      .hero-section {
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('WhatsApp Image 2026-02-26 at 3.15.16 PM.jpeg') center/cover no-repeat;
+        height: calc(100vh - 80px); /* Menyesuaikan tinggi layar dipotong navbar */
+        display: flex;
+        align-items: center;
+        color: white;
+      }
+
+      /* Efek Hover untuk Kartu Buku */
+      .buku-card {
+        cursor: pointer;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        border-left: 4px solid transparent;
+      }
+      .buku-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 15px rgba(0,0,0,0.1) !important;
+        border-left: 4px solid #d35400; /* Garis oranye */
+      }
+    </style>
+  </head>
+  <body id="home">
+
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="htt.html">
+          <i class="bi bi-book-half fs-3 me-2"></i> Tokyo Denki Library
+        </a>
+        <button class="navbar-toggler border-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link active fw-bold" href="htt.html"><i class="bi bi-house-door me-1"></i> Homepage</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html"><i class="bi bi-info-circle me-1"></i> About Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html"><i class="bi bi-envelope me-1"></i> Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section class="hero-section text-center">
+      <div class="container mt-5">
+        <h1 class="display-4 fw-bold mb-4">Selamat Datang di Perpustakaan Tokyo Denki</h1>
+        <p class="lead mb-5">Repositori tugas Pengembangan Web: eksplorasi, praktik, dan hasil belajar saya.</p>
+        <div class="d-flex justify-content-center gap-3 flex-wrap">
+          <a href="#cariBuku" class="btn btn-oranye btn-lg px-5 rounded-pill shadow">Cari Buku</a>
+          <a href="#eventTerbaru" class="btn btn-outline-light btn-lg px-5 rounded-pill">Event Terbaru</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="py-5 my-5">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6 mb-4 mb-md-0 text-center">
+            <img src="2b6f010d54238996c5ba54e79ec74881.jpg" alt="Tentang Perpustakaan" class="img-fluid rounded-4 shadow-sm" style="max-height: 400px; object-fit: cover;">
+          </div>
+          <div class="col-md-6 ps-md-5">
+            <h2 class="fw-bold mb-4">Apa yang Ada di Sini?</h2>
+
+            <div class="mb-4">
+              <h5 class="fw-bold"><i class="bi bi-folder-check text-oranye me-2"></i>Repositori Tugas:</h5>
+              <p class="text-muted mb-0">Temukan berbagai tugas yang telah saya kerjakan.</p>
+            </div>
+
+            <div class="mb-4">
+              <h5 class="fw-bold"><i class="bi bi-laptop text-oranye me-2"></i>Sumber Daya Pembelajaran:</h5>
+              <p class="text-muted mb-0">Artikel dan tutorial untuk belajar web.</p>
+            </div>
+
+            <div class="mb-5">
+              <h5 class="fw-bold"><i class="bi bi-building text-oranye me-2"></i>Kolaborasi Perpustakaan:</h5>
+              <p class="text-muted mb-0">Kami bekerja sama dengan <a href="https://library.usu.ac.id/id" class="text-oranye text-decoration-none fw-bold" target="_blank">Perpustakaan Universitas Sumatera Utara</a> untuk memberikan akses lebih luas ke koleksi buku dan sumber daya.</p>
+            </div>
+
+            <a href="about.html" class="btn btn-dark px-4 py-2 rounded-pill shadow-sm">Informasi Lebih Lanjut</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cariBuku" class="py-5" style="background-color: #f8f9fa;">
+      <div class="container py-4">
+
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Cari Buku</h2>
+            <p class="text-muted">Gunakan fitur pencarian untuk menemukan buku pilihan Anda.</p>
+        </div>
+        <div class="row justify-content-center mb-5">
+          <div class="col-md-8">
+            <div class="input-group input-group-lg shadow-sm border rounded">
+              <input type="text" class="form-control px-4 border-0" placeholder="Ketik di sini..." id="inputPencarian">
+              <button class="btn btn-oranye px-4 fw-bold" type="button"><i class="bi bi-search"></i> Cari</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-md-10 d-flex flex-column gap-4">
+
+            <div class="card shadow-sm border-0 py-3 px-4 buku-card" data-bs-toggle="modal" data-bs-target="#modalBuku1">
+                <div class="card-body text-center text-md-start">
+                    <h5 class="card-title fw-bold" style="color: #1a4a6b;">Learning Web Design: A Beginner's Guide to HTML, CSS, JavaScript, and Web Graphics</h5>
+                    <p class="card-text mb-0 mt-2" style="color: #2980b9;">"Learn to light a candle in the darkest moments of someone's life. Be the light that helps others see; it is what gives life its deepest significance." — Roy T. Bennett</p>
+                </div>
+            </div>
+
+            <div class="card shadow-sm border-0 py-3 px-4 buku-card" data-bs-toggle="modal" data-bs-target="#modalBuku2">
+                <div class="card-body text-center text-md-start">
+                    <h5 class="card-title fw-bold" style="color: #1a4a6b;">The 5 Second Rule: Transform your Life, Work, and Confidence with Everyday Courage</h5>
+                    <p class="card-text mb-0 mt-2" style="color: #2980b9;">"You often feel tired, not because you've done too much, but because you've done too little of what sparks a light in you." — Alexander Den Heijer</p>
+                </div>
+            </div>
+
+            <div class="card shadow-sm border-0 py-3 px-4 buku-card" data-bs-toggle="modal" data-bs-target="#modalBuku3">
+                <div class="card-body text-center text-md-start">
+                    <h5 class="card-title fw-bold" style="color: #1a4a6b;">Pengantar Ilmu Perpustakaan</h5>
+                    <p class="card-text mb-0 mt-2" style="color: #2980b9;">"Perpustakaan adalah jantung dari institusi pendidikan dan fondasi dari masyarakat pembelajar." — Sulistyo-Basuki</p>
+                </div>
+            </div>
+
+            <div class="card shadow-sm border-0 py-3 px-4 buku-card" data-bs-toggle="modal" data-bs-target="#modalBuku4">
+                <div class="card-body text-center text-md-start">
+                    <h5 class="card-title fw-bold" style="color: #1a4a6b;">Don't Make Me Think: A Common Sense Approach to Web Usability</h5>
+                    <p class="card-text mb-0 mt-2" style="color: #2980b9;">"If there's one thing you learn by working on a lot of different Web sites, it's that almost any design idea can be made usable in the right circumstances." — Steve Krug</p>
+                </div>
+            </div>
+
+            <div class="card shadow-sm border-0 py-3 px-4 buku-card" data-bs-toggle="modal" data-bs-target="#modalBuku5">
+                <div class="card-body text-center text-md-start">
+                    <h5 class="card-title fw-bold" style="color: #1a4a6b;">Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones</h5>
+                    <p class="card-text mb-0 mt-2" style="color: #2980b9;">"You do not rise to the level of your goals. You fall to the level of your systems." — James Clear</p>
+                </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="modal fade" id="modalBuku1" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow-lg rounded-4 text-center p-3">
+          <div class="modal-body">
+            <h5 class="fw-bold mb-3" style="color: #1a4a6b;">Learning Web Design</h5>
+            <div class="bg-light d-inline-flex align-items-center justify-content-center rounded mb-3 shadow-sm" style="width: 120px; height: 160px; border: 1px solid #ddd;">
+                <i class="bi bi-laptop text-muted" style="font-size: 3rem;"></i>
+            </div>
+            <p class="fst-italic text-muted mb-4 small">Buku panduan dasar bagi pemula untuk mempelajari struktur HTML, CSS, dan logika JavaScript dalam membangun antarmuka website.</p>
+            <div class="d-flex justify-content-center gap-2">
+                <a href="https://library.usu.ac.id/id" target="_blank" class="btn btn-oranye px-3 fw-bold">Baca di Perpus USU</a>
+                <button type="button" class="btn btn-secondary px-3 fw-bold" data-bs-dismiss="modal">Tutup</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modalBuku2" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow-lg rounded-4 text-center p-3">
+          <div class="modal-body">
+            <h5 class="fw-bold mb-3" style="color: #1a4a6b;">The 5 Second Rule</h5>
+            <div class="bg-light d-inline-flex align-items-center justify-content-center rounded mb-3 shadow-sm" style="width: 120px; height: 160px; border: 1px solid #ddd;">
+                <i class="bi bi-stopwatch text-muted" style="font-size: 3rem;"></i>
+            </div>
+            <p class="fst-italic text-muted mb-4 small">Trik psikologis sederhana untuk mengatasi kemalasan dan mengambil tindakan dalam 5 detik demi mengubah hidup.</p>
+            <div class="d-flex justify-content-center gap-2">
+                <a href="https://library.usu.ac.id/id" target="_blank" class="btn btn-oranye px-3 fw-bold">Baca di Perpus USU</a>
+                <button type="button" class="btn btn-secondary px-3 fw-bold" data-bs-dismiss="modal">Tutup</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modalBuku3" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow-lg rounded-4 text-center p-3">
+          <div class="modal-body">
+            <h5 class="fw-bold mb-3" style="color: #1a4a6b;">Pengantar Ilmu Perpustakaan</h5>
+            <div class="bg-light d-inline-flex align-items-center justify-content-center rounded mb-3 shadow-sm" style="width: 120px; height: 160px; border: 1px solid #ddd;">
+                <i class="bi bi-book text-muted" style="font-size: 3rem;"></i>
+            </div>
+            <p class="fst-italic text-muted mb-4 small">Buku wajib bagi mahasiswa Sains Informasi untuk memahami klasifikasi, sejarah, dan manajemen sistem perpustakaan.</p>
+            <div class="d-flex justify-content-center gap-2">
+                <a href="https://library.usu.ac.id/id" target="_blank" class="btn btn-oranye px-3 fw-bold">Baca di Perpus USU</a>
+                <button type="button" class="btn btn-secondary px-3 fw-bold" data-bs-dismiss="modal">Tutup</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modalBuku4" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow-lg rounded-4 text-center p-3">
+          <div class="modal-body">
+            <h5 class="fw-bold mb-3" style="color: #1a4a6b;">Don't Make Me Think</h5>
+            <div class="bg-light d-inline-flex align-items-center justify-content-center rounded mb-3 shadow-sm" style="width: 120px; height: 160px; border: 1px solid #ddd;">
+                <i class="bi bi-cursor text-muted" style="font-size: 3rem;"></i>
+            </div>
+            <p class="fst-italic text-muted mb-4 small">Konsep UI/UX terbaik yang mengajarkan bahwa navigasi web yang baik adalah yang tidak membuat penggunanya berpikir keras.</p>
+            <div class="d-flex justify-content-center gap-2">
+                <a href="https://library.usu.ac.id/id" target="_blank" class="btn btn-oranye px-3 fw-bold">Baca di Perpus USU</a>
+                <button type="button" class="btn btn-secondary px-3 fw-bold" data-bs-dismiss="modal">Tutup</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modalBuku5" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow-lg rounded-4 text-center p-3">
+          <div class="modal-body">
+            <h5 class="fw-bold mb-3" style="color: #1a4a6b;">Atomic Habits</h5>
+            <div class="bg-light d-inline-flex align-items-center justify-content-center rounded mb-3 shadow-sm" style="width: 120px; height: 160px; border: 1px solid #ddd;">
+                <i class="bi bi-graph-up-arrow text-muted" style="font-size: 3rem;"></i>
+            </div>
+            <p class="fst-italic text-muted mb-4 small">Metode pembentukan kebiasaan baik dengan perbaikan 1% setiap hari untuk mencapai hasil yang luar biasa.</p>
+            <div class="d-flex justify-content-center gap-2">
+                <a href="https://library.usu.ac.id/id" target="_blank" class="btn btn-oranye px-3 fw-bold">Baca di Perpus USU</a>
+                <button type="button" class="btn btn-secondary px-3 fw-bold" data-bs-dismiss="modal">Tutup</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section id="eventTerbaru" class="py-5 my-5">
+      <div class="container">
+        <h3 class="fw-bold mb-5 text-start">Event Terbaru</h3>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-0 rounded-4">
+              <img src="3807fce78603e48c147aac8f3c02e8c8.jpg" class="card-img-top rounded-top-4" alt="Event 1" style="height: 220px; object-fit: cover;">
+              <div class="card-body p-4">
+                <h5 class="card-title fw-bold">Lomba Resensi Buku 2026</h5>
+                <p class="card-text text-muted">Tunjukkan kreativitasmu dalam lomba ini!</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-0 rounded-4">
+              <img src="043163d46fd36bfdacd73aaca819a86a.jpg" class="card-img-top rounded-top-4" alt="Event 2" style="height: 220px; object-fit: cover;">
+              <div class="card-body p-4">
+                <h5 class="card-title fw-bold">Kelas Aksara Nusantara</h5>
+                <p class="card-text text-muted">Kenali aksara lokal lewat kelas menulis ini.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-0 rounded-4">
+              <img src="e61c9d664385826b3274738843d4b2dd.jpg" class="card-img-top rounded-top-4" alt="Event 3" style="height: 220px; object-fit: cover;">
+              <div class="card-body p-4">
+                <h5 class="card-title fw-bold">Digital Illustration Competition</h5>
+                <p class="card-text text-muted">Wujudkan kreativitasmu lewat ilustrasi digital!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5 text-white text-center bg-oranye">
+      <div class="container py-3">
+        <h3 class="fw-bold mb-3">Bergabunglah Bersama Kami!</h3>
+        <p class="mb-0 fs-5">Kami berharap Anda menemukan informasi yang berguna. Selamat menjelajahi!</p>
+      </div>
+    </section>
+
+    <footer class="text-white text-center py-4 bg-oranye">
+      <div class="container">
+        <p class="mb-0">&copy; 2026 Perpustakaan Tokyo Denki - Muhammad Al Bukhari</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      const inputPencarian = document.getElementById('inputPencarian');
+      inputPencarian.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+          e.preventDefault(); 
+          const kataKunci = inputPencarian.value;
+          if (kataKunci.trim() === '') {
+            alert('Tulis judul buku yang mau dicari dulu, ya!');
+          } else {
+            alert(`Sistem sedang mencari buku: "${kataKunci}" ... (Fitur masih dalam tahap pengembangan)`);
+            inputPencarian.value = ''; 
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
