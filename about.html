@@ -43,6 +43,14 @@
         .table-custom th { width: 30%; background-color: #fdf2e9; color: #d35400; font-weight: 600; padding: 15px 20px; border-color: #fdf2e9; }
         .table-custom td { padding: 15px 20px; color: #334155; }
     </style>
+
+    <script>
+      if (localStorage.getItem('statusLogin') !== 'sudahLogin') {
+          // Langsung lempar ke halaman peringatan full-screen
+          window.location.href = 'logindulu.html';
+      }
+    </script>
+
 </head>
 <body>
 
