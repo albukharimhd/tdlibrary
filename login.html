@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Anggota | Muhammad Al Bukhari</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7f6; padding-top: 80px; }
+        .navbar-custom { background-color: #d35400 !important; box-shadow: 0 4px 12px rgba(0,0,0,0.1); padding: 0 !important; height: 80px !important; display: flex; align-items: center; }
+        .navbar-custom .navbar-brand { color: #ffffff !important; font-weight: 700; font-size: 1.5rem; }
+        .login-section { background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('WhatsApp Image 2026-02-26 at 3.15.16 PM.jpeg') center/cover no-repeat; min-height: calc(100vh - 80px); display: flex; align-items: center; justify-content: center; padding: 40px 0; }
+        .login-card { background-color: #1a202c; border-radius: 16px; box-shadow: 0 15px 30px rgba(0,0,0,0.5); padding: 50px 40px; width: 100%; max-width: 500px; border: 1px solid #2d3748; }
+        .login-card h3 { color: #d35400; font-weight: 700; }
+        .login-card label { color: #e2e8f0; font-size: 0.9rem; margin-bottom: 8px; }
+        .login-card .form-control { border-radius: 8px; padding: 12px 15px; }
+        .login-card .form-control:focus { box-shadow: 0 0 0 3px rgba(211, 84, 0, 0.3); border-color: #d35400; }
+        .btn-login { background-color: #d35400; color: white; font-weight: bold; border-radius: 8px; padding: 12px; width: 100%; border: none; transition: all 0.3s ease; }
+        .btn-login:hover { background-color: #ba4a00; color: white; transform: translateY(-2px); }
+        .login-footer { color: #cbd5e1; font-size: 0.9rem; text-align: center; margin-top: 25px; }
+        .login-footer a { color: #d35400; text-decoration: none; font-weight: 600; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html"><i class="bi bi-book-half fs-3 me-2"></i> Tokyo Denki Library</a>
+        </div>
+    </nav>
+
+    <section class="login-section">
+        <div class="container d-flex justify-content-center">
+            <div class="login-card">
+                <h3 class="text-center mb-4">Login Anggota</h3>
+                
+                <form id="formLogin">
+                    <div class="mb-4">
+                        <label for="username">NIM / ID Anggota</label>
+                        <input type="text" class="form-control" id="username" placeholder="Masukkan ID Pengguna" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" placeholder="Masukkan Kata Sandi" required>
+                    </div>
+                    <button type="submit" class="btn btn-login mt-2">LOGIN SEKARANG</button>
+                </form>
+
+                <div class="login-footer">
+                    Belum punya akun? <a href="daftar.html">Daftar di sini</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('formLogin').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const nimMasuk = document.getElementById('username').value;
+            const passMasuk = document.getElementById('password').value;
+
+            // Mengambil data pendaftaran dari Local Storage
+            const dataTersimpan = JSON.parse(localStorage.getItem('dataAnggotaPerpus'));
+
+            // Mengecek apakah datanya ada dan passwordnya cocok
+            if (dataTersimpan && dataTersimpan.nim === nimMasuk && dataTersimpan.password === passMasuk) {
+                // Set status login jadi TRUE
+                localStorage.setItem('statusLogin', 'sudahLogin');
+                alert('Login Berhasil! Selamat datang, ' + dataTersimpan.nama);
+                window.location.href = 'index.html'; // Bawa kembali ke Beranda
+            } else {
+                alert('NIM atau Password salah, silahkan daftar!');
+            }
+        });
+    </script>
+</body>
+</html>

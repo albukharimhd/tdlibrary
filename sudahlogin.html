@@ -1,0 +1,25 @@
+<script>
+      // Mengecek apakah user sudah login
+      if (localStorage.getItem('statusLogin') === 'sudahLogin') {
+          const dataUser = JSON.parse(localStorage.getItem('dataAnggotaPerpus'));
+          
+          // Cari tombol login di navbar (pakai selektor query)
+          const menuLogin = document.querySelector('.ms-lg-3.mt-3.mt-lg-0');
+          
+          // Ubah tombol Login jadi tombol Logout + Nama User
+          if (menuLogin) {
+              menuLogin.innerHTML = `
+                <a class="btn btn-outline-light fw-bold px-4 rounded-pill" href="#" onclick="logoutUser()">
+                  <i class="bi bi-person-check-fill me-1"></i> Halo, ${dataUser.nama} (Logout)
+                </a>
+              `;
+          }
+      }
+
+      // Fungsi untuk Logout
+      function logoutUser() {
+          localStorage.removeItem('statusLogin');
+          alert('Kamu berhasil logout!');
+          window.location.reload(); // Refresh halaman
+      }
+    </script>
