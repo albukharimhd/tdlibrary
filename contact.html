@@ -70,6 +70,14 @@
             color: white; 
         }
     </style>
+
+    <script>
+      if (localStorage.getItem('statusLogin') !== 'sudahLogin') {
+          // Langsung lempar ke halaman peringatan full-screen
+          window.location.href = 'logindulu.html';
+      }
+    </script>    
+
 </head>
 <body>
 
